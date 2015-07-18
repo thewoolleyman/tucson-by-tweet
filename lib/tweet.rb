@@ -1,4 +1,5 @@
 require 'twitter'
+require 'json'
 
 class Tweet
   def initialize
@@ -10,10 +11,13 @@ class Tweet
     end
   end
 
-  def search(topics = ["coffee", "tea"])
-    @client.search(topics.join(","), result_type: "recent").take(3).collect do |tweet|
-      p tweet.geo
-      # "#{tweet.text}"
+  def search(topics = ["tucson"])
+    out = []
+    @client.search(topics.join(","), result_type: "recent").take(300).collect do |tweet|
+      unless tweet.geo.coordinates.nil?
+        out << tweet
+      end
     end
+    out
   end
 end

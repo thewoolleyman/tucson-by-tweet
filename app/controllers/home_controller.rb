@@ -1,8 +1,12 @@
+require_relative '../../lib/tweet'
 class HomeController < ApplicationController
-
-  # # GET /homes/1
-  # # GET /homes/1.json
-  # def show
-  #   render text: 'tucson by tweet'
-  # end
+  def data
+    out = []
+    tweets = Tweet.new.search
+    tweets.each do |tweet|
+      c = tweet.geo.coordinates
+      out << {'lat' => "#{c[0]}", 'long' => "#{c[1]}", 'tweet' => tweet.text}
+    end
+    render json: out.to_json
+  end
 end
