@@ -1,4 +1,4 @@
-require_relative '../lib/assets/tweet'
+require_relative '../lib/tweet'
 
 
 RSpec.describe Tweet do
