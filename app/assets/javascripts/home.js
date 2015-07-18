@@ -55,8 +55,8 @@ map.addColumn({type: 'string', role: 'tooltip'})
 };
 
 setTimeout(function(){
-	$("circle").attr("stroke", "#e74c3c ");
-$("circle").attr("fill", "#e74c3c ");
+
+$("circle").attr("fill", "#e74c3c");
 },1000);
 });
 
