@@ -58,12 +58,15 @@ table {
 	border-spacing: 0;
 }
 
-html {padding:0px;margin:0px;background-color:#F1C40f;}
+html {padding:0px;margin:0px;}
 div.main {
     color: #008000;
+    overflow:hidden;
+    margin:0;
+    padding:0;
 }
 /* customizations */
-.header {margin:0; text-align:center;background-color:#F1C40F; border-bottom:1px dashed #F39C12;}
+.header {margin:0; text-align:center;background-color:#F1C40F;}
 .navbar-brand {float:none;color:#9B59B6;}
 .header h1 {
   margin-left:-1em;
@@ -73,7 +76,7 @@ div.main {
     line-height:1em;
     border:0px;
     letter-spacing:0.075em;
-    padding:1em 0em 1.25em;
+    padding:0.45em 0em 0.55em;
 }
 .smaller-text{font-size:68%;}
 
