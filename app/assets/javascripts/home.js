@@ -10,7 +10,7 @@
 
     function drawMap() {
          // when document loads, grab the json
-         $.getJSON('data.json', function(data) {
+         $.getJSON('home/data', function(data) {
              // once grabbed, we run this callback
  
              // setup the new map and its variables
@@ -35,6 +35,7 @@ map.addColumn({type: 'string', role: 'tooltip'})
               var options = {
               	displayMode :"markers",
               	legend:"none",
+              	sizeAxis: { minValue: 0, maxValue: 100 },
               	colorAxis: {minValue:1, maxValue:1,colors: ['#e74c3c','#8e44ad']},
               	datalessRegionColor: '#27ae60',
               	  backgroundColor: '#f1c40f',
