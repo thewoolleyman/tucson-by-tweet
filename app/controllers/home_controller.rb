@@ -6,6 +6,7 @@ class HomeController < ApplicationController
     tweets.each do |tweet|
       c = tweet.geo.coordinates
       out << {'lat' => "#{c[0]}", 'long' => "#{c[1]}", 'tweet' => tweet.text}
+Rails.logger.debug(out)
     end
     render json: out.to_json
   end

@@ -13,11 +13,33 @@ class Tweet
 
   def search(topics = ["tucson"])
     out = []
-    @client.search(topics.join(","), result_type: "recent").take(300).collect do |tweet|
-      unless tweet.geo.coordinates.nil?
-        out << tweet
-      end
+
+    options = {
+      geocode: "#{latitude},#{longitude},#{3000}mi",
+      result_type: 'recent',
+    }
+
+    @client.search(topics.join(","), options).take(30000).collect do |tweet|
+      out << tweet
     end
     out
   end
+
+
+  def latitude
+    tucson = '32.3083008'
+    nyc = '40.7127'
+    ENV['latitude'] || nyc
+  end
+
+  def longitude
+    tucson = '-110.9264'
+    nyc = '-74.0059'
+    ENV['latitude'] || nyc
+  end
+
+  def radius_of_earth
+    12450
+  end
+
 end
