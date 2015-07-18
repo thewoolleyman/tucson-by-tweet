@@ -32,13 +32,17 @@ map.addColumn({type: 'string', role: 'tooltip'})
                  map.setValue(i, 2, v.text);
              });
 
-              var options = {};
-              options['colors'] = [0xFF8747, 0xFFB581, 0xc06000]; //orange colors
-              options['displayMode'] = 'markers';
-              options['datalessRegionColor']='#f5f5f5';
-              options['width'] = '1200px';
-              options['height'] = '900px';
-              options['showLegend'] = false;
+              var options = {
+              	displayMode :"markers",
+              	legend:"none",
+              	colorAxis: {minValue:1, maxValue:1,colors: ['#e74c3c','#8e44ad']},
+              	datalessRegionColor: '#27ae60',
+              	  backgroundColor: '#f1c40f',
+              	  width:'1200px',
+              	  height:'900px'
+
+              };
+             
 
              // finally, create the map!
              var geochart = new google.visualization.GeoChart(
