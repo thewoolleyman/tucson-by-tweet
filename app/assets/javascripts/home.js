@@ -29,7 +29,7 @@ map.addColumn({type: 'string', role: 'tooltip'})
                  // set the values for both the name and the population
                  map.setValue(i, 0, v.lat);
                  map.setValue(i, 1, v.long);
-                 map.setValue(i, 2, v.text);
+                 map.setValue(i, 2, v.tweet);
              });
 
               var options = {
